@@ -14,7 +14,7 @@ public class ProductoFormulario extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -25,7 +25,7 @@ public class ProductoFormulario extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the frame.
@@ -41,15 +41,15 @@ public class ProductoFormulario extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnGestionarClientes = new JButton("Gestionar Clientes");
-		btnGestionarClientes.setBounds(140, 30, 140, 23);
+		btnGestionarClientes.setBounds(140, 30, 166, 23);
 		contentPane.add(btnGestionarClientes);
 		
 		JButton btnGestionarActividades = new JButton("Gestionar Actividades");
-		btnGestionarActividades.setBounds(140, 90, 140, 23);
+		btnGestionarActividades.setBounds(140, 90, 166, 23);
 		contentPane.add(btnGestionarActividades);
 		
 		JButton btnGestionarInscripciones = new JButton("Gestionar Inscipciones");
-		btnGestionarInscripciones.setBounds(140, 150, 140, 23);
+		btnGestionarInscripciones.setBounds(140, 150, 166, 23);
 		contentPane.add(btnGestionarInscripciones);
 	}
 
