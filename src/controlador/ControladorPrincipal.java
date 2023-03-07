@@ -31,17 +31,20 @@ private Principal ventanaPrincipal;
 			GestorClientes gestorClientes = new GestorClientes();
 			ControladorClientes cClientes = new ControladorClientes(gestorClientes);
 			cClientes.inicializar();
+			gestorClientes.setModal(true);
 			gestorClientes.setVisible(true);
 		}else if(e.getSource() == ventanaPrincipal.getBtnGestionarActividades()) {
 			GestorActividades gestorActividades = new GestorActividades();
 			ControladorActividades cActividades = new ControladorActividades(gestorActividades);
 			cActividades.inicializar();
+			gestorActividades.setModal(true);
 			gestorActividades.setVisible(true);
 			
 		}else if(e.getSource() == ventanaPrincipal.getBtnGestionarInscripciones()) {
 			GestorInscripciones gestorInscripciones = new GestorInscripciones();
 			ControladorInscripciones cIncripciones = new ControladorInscripciones(gestorInscripciones);
 			cIncripciones.inicializar();
+			gestorInscripciones.setModal(true);
 			gestorInscripciones.setVisible(true);
 			
 		}
