@@ -4,8 +4,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class Principal extends JFrame{
 	private JPanel contentPane;
@@ -29,10 +27,6 @@ public class Principal extends JFrame{
 		contentPane.add(btnGestionarClientes);
 		
 		btnGestionarActividades = new JButton("Gestionar Actividades");
-		btnGestionarActividades.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnGestionarActividades.setBounds(163, 90, 172, 23);
 		contentPane.add(btnGestionarActividades);
 		
