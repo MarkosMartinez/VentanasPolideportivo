@@ -8,7 +8,7 @@ public class Conector {
 	protected Connection con;
 
 	private String host = "localhost";
-	private String bbdd = "warehouse";
+	private String bbdd = "polideportivo";
 	private String usuario = "root";
 	private String contrasenia = "";
 
