@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTabbedPane;
 
 public class GestorClientes extends JDialog {
 
@@ -38,6 +39,13 @@ public class GestorClientes extends JDialog {
 	public GestorClientes() {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
+		
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setBounds(0, 0, 434, 228);
+		getContentPane().add(tabbedPane);
+		
+		JPanel panel = new JPanel();
+		tabbedPane.addTab("New tab", null, panel, null);
 		contentPanel.setBounds(0, 0, 434, 228);
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel);
@@ -70,7 +78,7 @@ public class GestorClientes extends JDialog {
 		contentPanel.add(textCodigo);
 		textCodigo.setColumns(10);
 		
-		btnGuardar = new JButton("Guardar");
+		btnGuardar = new JButton("Insertar");
 		btnGuardar.setBounds(132, 159, 89, 23);
 		contentPanel.add(btnGuardar);
 		{

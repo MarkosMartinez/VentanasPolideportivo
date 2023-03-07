@@ -23,15 +23,15 @@ public class Principal extends JFrame{
 		contentPane.setLayout(null);
 
 		btnGestionarClientes = new JButton("Gestionar Clientes");
-		btnGestionarClientes.setBounds(163, 30, 172, 23);
+		btnGestionarClientes.setBounds(150, 30, 172, 23);
 		contentPane.add(btnGestionarClientes);
 		
 		btnGestionarActividades = new JButton("Gestionar Actividades");
-		btnGestionarActividades.setBounds(163, 90, 172, 23);
+		btnGestionarActividades.setBounds(150, 90, 172, 23);
 		contentPane.add(btnGestionarActividades);
 		
 		btnGestionarInscripciones = new JButton("Gestionar Inscipciones");
-		btnGestionarInscripciones.setBounds(163, 150, 172, 23);
+		btnGestionarInscripciones.setBounds(150, 150, 172, 23);
 		contentPane.add(btnGestionarInscripciones);
 		
 	}
