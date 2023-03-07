@@ -3,27 +3,26 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import vista.Principal;
+import vista.GestorClientes;
 
 public class ControladorClientes implements ActionListener {
+	private GestorClientes ventanaClientes;
 
-	/*public ControladorClientes(Principal principal) {
-		ventanaPrincipal = principal;
-		ventanaPrincipal.getBtnGestionarClientes().addActionListener(this);
-		ventanaPrincipal.getBtnGestionarActividades().addActionListener(this);
-		ventanaPrincipal.getBtnGestionarInscripciones().addActionListener(this);
+	public ControladorClientes(GestorClientes gestorClientes) {
+		ventanaClientes = gestorClientes;
+		/*Aqui tambien van los botones*/
 	}
-	
-	public void inicializar() {
-		ventanaPrincipal.setTitle("Desktop");
-		ventanaPrincipal.setLocationRelativeTo(null);
-		ventanaPrincipal.setVisible(false);
-	}*/
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public void inicializar() {
+		ventanaClientes.setTitle("Clientes");
+		ventanaClientes.setLocationRelativeTo(null);
+		ventanaClientes.setVisible(false);
 	}
 	
 }

@@ -3,6 +3,9 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import vista.GestorActividades;
+import vista.GestorClientes;
+import vista.GestorInscripciones;
 import vista.Principal;
 
 public class ControladorPrincipal implements ActionListener{
@@ -27,27 +30,22 @@ private ControladorInscripciones Inscripciones;
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		/*System.out.println("Algun boton ha sido clickado");*/
 		if(e.getSource() == ventanaPrincipal.getBtnGestionarClientes()) {
-			System.out.println("Boton Gestionar Clientes ha sido clickado");
+			GestorClientes gestorClientes = new GestorClientes();
+			ControladorClientes cClientes = new ControladorClientes(gestorClientes);
+			cClientes.inicializar();
+			gestorClientes.setVisible(true);
+		}else if(e.getSource() == ventanaPrincipal.getBtnGestionarActividades()) {
+			GestorActividades gestorActividades = new GestorActividades();
+			ControladorActividades cActividades = new ControladorActividades(gestorActividades);
+			cActividades.inicializar();
+			gestorActividades.setVisible(true);
 			
-			/*
-			ProductoModelo productoM = new ProductoModelo();
-			vista.ProductoFormulario productoF = new ProductoFormulario(frmPrincipal, true);
-			
-			ControladorProducto productoC = new ControladorProducto(productoM, productoF);
-			productoC.inicializar();
-			productoF.setVisible(true);
-			 */
-		}
-		
-		if(e.getSource() == ventanaPrincipal.getBtnGestionarActividades()) {
-			System.out.println("Boton Gestionar Actividades ha sido clickado");
-			
-		}
-		
-		if(e.getSource() == ventanaPrincipal.getBtnGestionarInscripciones()) {
-			System.out.println("Boton Gestionar Inscripciones ha sido clickado");
+		}else if(e.getSource() == ventanaPrincipal.getBtnGestionarInscripciones()) {
+			GestorInscripciones gestorInscripciones = new GestorInscripciones();
+			ControladorInscripciones cIncripciones = new ControladorInscripciones(gestorInscripciones);
+			cIncripciones.inicializar();
+			gestorInscripciones.setVisible(true);
 			
 		}
 		
