@@ -1,4 +1,4 @@
-package vista;
+package controlador;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 
-public class GestorClientes extends JDialog {
+public class ControladorInscripciones extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 
@@ -18,7 +18,7 @@ public class GestorClientes extends JDialog {
 	 */
 	public static void main(String[] args) {
 		try {
-			GestorClientes dialog = new GestorClientes();
+			ControladorInscripciones dialog = new ControladorInscripciones();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -29,7 +29,7 @@ public class GestorClientes extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public GestorClientes() {
+	public ControladorInscripciones() {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 		contentPanel.setBounds(0, 0, 434, 228);
@@ -38,7 +38,7 @@ public class GestorClientes extends JDialog {
 		contentPanel.setLayout(null);
 		{
 			JLabel lblProximamente = new JLabel("Proximamente...");
-			lblProximamente.setBounds(162, 96, 100, 14);
+			lblProximamente.setBounds(164, 107, 90, 14);
 			contentPanel.add(lblProximamente);
 		}
 		{

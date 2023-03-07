@@ -7,6 +7,10 @@ import vista.Principal;
 
 public class ControladorPrincipal implements ActionListener{
 private Principal ventanaPrincipal;
+private ControladorClientes Clientes;
+private ControladorActividades Actividades;
+private ControladorInscripciones Inscripciones;
+/*Poner los gestores o los controladores?*/
 	
 	public ControladorPrincipal(Principal principal) {
 		ventanaPrincipal = principal;
@@ -27,6 +31,14 @@ private Principal ventanaPrincipal;
 		if(e.getSource() == ventanaPrincipal.getBtnGestionarClientes()) {
 			System.out.println("Boton Gestionar Clientes ha sido clickado");
 			
+			/*
+			ProductoModelo productoM = new ProductoModelo();
+			vista.ProductoFormulario productoF = new ProductoFormulario(frmPrincipal, true);
+			
+			ControladorProducto productoC = new ControladorProducto(productoM, productoF);
+			productoC.inicializar();
+			productoF.setVisible(true);
+			 */
 		}
 		
 		if(e.getSource() == ventanaPrincipal.getBtnGestionarActividades()) {
