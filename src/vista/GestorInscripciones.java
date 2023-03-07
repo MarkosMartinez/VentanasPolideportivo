@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
 
 public class GestorInscripciones extends JDialog {
 
@@ -30,14 +31,21 @@ public class GestorInscripciones extends JDialog {
 	 */
 	public GestorInscripciones() {
 		setBounds(100, 100, 450, 300);
-		getContentPane().setLayout(new BorderLayout());
-		contentPanel.setLayout(new FlowLayout());
+		getContentPane().setLayout(null);
+		contentPanel.setBounds(0, 0, 434, 228);
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
-		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		getContentPane().add(contentPanel);
+		contentPanel.setLayout(null);
+		{
+			JLabel lblProximamente = new JLabel("Proximamente...");
+			lblProximamente.setBounds(164, 107, 90, 14);
+			contentPanel.add(lblProximamente);
+		}
 		{
 			JPanel buttonPane = new JPanel();
+			buttonPane.setBounds(0, 228, 434, 33);
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
-			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			getContentPane().add(buttonPane);
 			{
 				JButton okButton = new JButton("OK");
 				okButton.setActionCommand("OK");
