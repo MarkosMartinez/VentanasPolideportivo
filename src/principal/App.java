@@ -2,7 +2,6 @@ package principal;
 
 import controlador.ControladorPrincipal;
 import vista.Principal;
-import javax.swing.JButton;
 
 public class App {
 

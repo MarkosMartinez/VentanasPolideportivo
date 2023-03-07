@@ -4,33 +4,41 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import vista.Principal;
-import vista.ProductoFormulario;
 
 public class ControladorPrincipal implements ActionListener{
-private Principal frmPrincipal;
+private Principal ventanaPrincipal;
 	
 	public ControladorPrincipal(Principal principal) {
-		frmPrincipal = principal;
-		frmPrincipal.btnGestionarClientes.addActionListener(this);
-		frmPrincipal.btnGestionarActividades.addActionListener(this);
-		frmPrincipal.btnGestionarInscripciones.addActionListener(this);
+		ventanaPrincipal = principal;
+		ventanaPrincipal.getBtnGestionarClientes().addActionListener(this);
+		ventanaPrincipal.getBtnGestionarActividades().addActionListener(this);
+		ventanaPrincipal.getBtnGestionarInscripciones().addActionListener(this);
 	}
 	
 	public void inicializar() {
-		frmPrincipal.setTitle("Desktop");
-		frmPrincipal.setLocationRelativeTo(null);
-		frmPrincipal.setVisible(false);
+		ventanaPrincipal.setTitle("Desktop");
+		ventanaPrincipal.setLocationRelativeTo(null);
+		ventanaPrincipal.setVisible(false);
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == frmPrincipal.btnGestionarClientes) {
+		/*System.out.println("Boton clickado");*/
+		if(e.getSource() == ventanaPrincipal.getBtnGestionarClientes()) {
 			/*ProductoModelo productoM = new ProductoModelo();
 			vista.ProductoFormulario productoF = new ProductoFormulario(frmPrincipal, true);
 			
 			ControladorProducto productoC = new ControladorProducto(productoM, productoF);
 			productoC.inicializar();
 			productoF.setVisible(true);*/
+		}
+		
+		if(e.getSource() == ventanaPrincipal.getBtnGestionarActividades()) {
+			
+		}
+		
+		if(e.getSource() == ventanaPrincipal.getBtnGestionarInscripciones()) {
+			
 		}
 		
 	}

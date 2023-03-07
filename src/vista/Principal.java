@@ -10,9 +10,9 @@ import java.awt.event.ActionEvent;
 public class Principal extends JFrame{
 	private JPanel contentPane;
 	
-	public JButton btnGestionarClientes;
-	public JButton btnGestionarActividades;
-	public JButton btnGestionarInscripciones;
+	private JButton btnGestionarClientes;
+	private JButton btnGestionarActividades;
+	private JButton btnGestionarInscripciones;
 
 	public Principal() {
 		setTitle("Principal");
@@ -40,6 +40,22 @@ public class Principal extends JFrame{
 		btnGestionarInscripciones.setBounds(163, 150, 172, 23);
 		contentPane.add(btnGestionarInscripciones);
 		
+	}
+
+	public JPanel getContentPane() {
+		return contentPane;
+	}
+
+	public JButton getBtnGestionarClientes() {
+		return btnGestionarClientes;
+	}
+
+	public JButton getBtnGestionarActividades() {
+		return btnGestionarActividades;
+	}
+
+	public JButton getBtnGestionarInscripciones() {
+		return btnGestionarInscripciones;
 	}
 
 }
