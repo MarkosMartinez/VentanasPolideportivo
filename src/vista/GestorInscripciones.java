@@ -37,8 +37,8 @@ public class GestorInscripciones extends JDialog {
 		getContentPane().add(contentPanel);
 		contentPanel.setLayout(null);
 		{
-			JLabel lblProximamente = new JLabel("Proximamente...");
-			lblProximamente.setBounds(164, 107, 90, 14);
+			JLabel lblProximamente = new JLabel("Inscripciones, Proximamente...");
+			lblProximamente.setBounds(133, 107, 180, 14);
 			contentPanel.add(lblProximamente);
 		}
 		{

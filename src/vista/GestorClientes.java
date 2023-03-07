@@ -37,8 +37,8 @@ public class GestorClientes extends JDialog {
 		getContentPane().add(contentPanel);
 		contentPanel.setLayout(null);
 		{
-			JLabel lblProximamente = new JLabel("Proximamente...");
-			lblProximamente.setBounds(162, 96, 100, 14);
+			JLabel lblProximamente = new JLabel("Clientes, Proximamente...");
+			lblProximamente.setBounds(142, 96, 146, 14);
 			contentPanel.add(lblProximamente);
 		}
 		{

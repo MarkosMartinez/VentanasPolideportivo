@@ -3,11 +3,13 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import modelo.ModeloActividad;
 import vista.GestorActividades;
 
 public class ControladorActividades implements ActionListener{
 
 	private GestorActividades ventanaActividades;
+	private ModeloActividad mActividad;
 
 	public ControladorActividades(GestorActividades gestorActividades) {
 		ventanaActividades = gestorActividades;

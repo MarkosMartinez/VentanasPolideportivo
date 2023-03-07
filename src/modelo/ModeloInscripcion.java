@@ -1,12 +1,12 @@
 package modelo;
 
-public class Inscripcion {
+public class ModeloInscripcion {
 	
 	private int id;
 	private int id_usuario;
 	private int id_actividad;
 	
-	public Inscripcion() {
+	public ModeloInscripcion() {
 		
 	}
 	

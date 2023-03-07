@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.Date;
 
-public class Actividad {
+public class ModeloActividad {
 	
 	private int id;
 	private String nombre;
@@ -12,7 +12,7 @@ public class Actividad {
 	private int max_participantes;
 	private int precio;
 	
-	public Actividad() {
+	public ModeloActividad() {
 		
 	}
 	

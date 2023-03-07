@@ -3,10 +3,12 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import modelo.ModeloCliente;
 import vista.GestorClientes;
 
 public class ControladorClientes implements ActionListener {
 	private GestorClientes ventanaClientes;
+	private ModeloCliente mCliente;
 
 	public ControladorClientes(GestorClientes gestorClientes) {
 		ventanaClientes = gestorClientes;

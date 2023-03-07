@@ -3,11 +3,13 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import modelo.ModeloInscripcion;
 import vista.GestorInscripciones;
 
 public class ControladorInscripciones implements ActionListener{
 
 	private GestorInscripciones ventanaInscripciones;
+	private ModeloInscripcion mInscripcion;
 
 	public ControladorInscripciones(GestorInscripciones gestorInscripciones) {
 		ventanaInscripciones = gestorInscripciones;

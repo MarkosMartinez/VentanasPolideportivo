@@ -1,13 +1,13 @@
 package modelo;
 
-public class Cliente {
+public class ModeloCliente {
 	
 	private int id;
 	private String nombre_apellido;
 	private String dni;
 	private String codigo;
 	
-	public Cliente() {
+	public ModeloCliente() {
 		
 	}
 	

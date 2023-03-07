@@ -37,8 +37,8 @@ public class GestorActividades extends JDialog {
 		getContentPane().add(contentPanel);
 		contentPanel.setLayout(null);
 		
-		JLabel lblProximamente = new JLabel("Proximamente...");
-		lblProximamente.setBounds(172, 104, 90, 14);
+		JLabel lblProximamente = new JLabel("Actividades, Proximamente...");
+		lblProximamente.setBounds(115, 103, 170, 14);
 		contentPanel.add(lblProximamente);
 		{
 			JPanel buttonPane = new JPanel();

@@ -10,9 +10,6 @@ import vista.Principal;
 
 public class ControladorPrincipal implements ActionListener{
 private Principal ventanaPrincipal;
-private ControladorClientes Clientes;
-private ControladorActividades Actividades;
-private ControladorInscripciones Inscripciones;
 /*Poner los gestores o los controladores?*/
 	
 	public ControladorPrincipal(Principal principal) {
