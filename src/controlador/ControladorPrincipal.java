@@ -23,21 +23,19 @@ private Principal ventanaPrincipal;
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		/*System.out.println("Boton clickado");*/
+		/*System.out.println("Algun boton ha sido clickado");*/
 		if(e.getSource() == ventanaPrincipal.getBtnGestionarClientes()) {
-			/*ProductoModelo productoM = new ProductoModelo();
-			vista.ProductoFormulario productoF = new ProductoFormulario(frmPrincipal, true);
+			System.out.println("Boton Gestionar Clientes ha sido clickado");
 			
-			ControladorProducto productoC = new ControladorProducto(productoM, productoF);
-			productoC.inicializar();
-			productoF.setVisible(true);*/
 		}
 		
 		if(e.getSource() == ventanaPrincipal.getBtnGestionarActividades()) {
+			System.out.println("Boton Gestionar Actividades ha sido clickado");
 			
 		}
 		
 		if(e.getSource() == ventanaPrincipal.getBtnGestionarInscripciones()) {
+			System.out.println("Boton Gestionar Inscripciones ha sido clickado");
 			
 		}
 		
