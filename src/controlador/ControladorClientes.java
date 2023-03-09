@@ -17,7 +17,9 @@ public class ControladorClientes implements ActionListener {
 	public ControladorClientes(GestorClientes gestorClientes) {
 		ventanaClientes = gestorClientes;
 		ventanaClientes.getBtnGuardar().addActionListener(this);
-		/*Aqui tambien van los botones*/
+		ventanaClientes.getBtnCargar().addActionListener(this);
+		ventanaClientes.getBtnEliminar().addActionListener(this);
+		ventanaClientes.getBtnModificar().addActionListener(this);
 	}
 
 	@Override
@@ -35,6 +37,9 @@ public class ControladorClientes implements ActionListener {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
+		}else if(e.getSource() == ventanaClientes.getBtnCargar()) {
+			//TODO Aqui meter lo que tiene que hacer el boton y eliminarlo del GestorCliente. Un metodo para obtener los textbox?
+			//TODO comprobar que el insertar funciona.
 		}
 	}
 

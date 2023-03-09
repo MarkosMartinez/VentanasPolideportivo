@@ -28,6 +28,9 @@ public class GestorClientes extends JDialog {
 	private JTextField textModNombre;
 	private JTextField textModDni;
 	private JTextField textModCode;
+	private JButton btnModificar;
+	private JButton btnEliminar;
+	private JButton btnCargar;
 
 	/**
 	 * Launch the application.
@@ -144,10 +147,10 @@ public class GestorClientes extends JDialog {
 		panelModificar.add(textModCode);
 		textModCode.setColumns(10);
 		
-		JButton btnCargar = new JButton("Cargar Cliente");
-		JButton btnEliminar = new JButton("Eliminar Cliente");
+		btnCargar = new JButton("Cargar Cliente");
+		btnEliminar = new JButton("Eliminar Cliente");
 		
-		JButton btnModificar = new JButton("Modificar");
+		btnModificar = new JButton("Modificar");
 		btnModificar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ModeloCliente cliente = new ModeloCliente();
@@ -303,5 +306,33 @@ public class GestorClientes extends JDialog {
 
 	public void setTextNomApellido(JTextField textNomApellido) {
 		this.textNomApellido = textNomApellido;
+	}
+
+	public JButton getBtnModificar() {
+		return btnModificar;
+	}
+
+	public void setBtnModificar(JButton btnModificar) {
+		this.btnModificar = btnModificar;
+	}
+
+	public JButton getBtnEliminar() {
+		return btnEliminar;
+	}
+
+	public void setBtnEliminar(JButton btnEliminar) {
+		this.btnEliminar = btnEliminar;
+	}
+
+	public JButton getBtnCargar() {
+		return btnCargar;
+	}
+
+	public void setBtnCargar(JButton btnCargar) {
+		this.btnCargar = btnCargar;
+	}
+
+	public void setBtnGuardar(JButton btnGuardar) {
+		this.btnGuardar = btnGuardar;
 	}
 }
