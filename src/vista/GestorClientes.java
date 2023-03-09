@@ -6,19 +6,25 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import modelo.GestorBBDD;
+import modelo.ModeloCliente;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.JTabbedPane;
 
 public class GestorClientes extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JButton btnGuardar;
-	private JTextField textCodigo;
-	private JTextField textDni;
 	private JTextField textNomApellido;
+	private JTextField textDni;
+	private JTextField textCodigo;
+	private JButton btnGuardar;
 
 	/**
 	 * Launch the application.
@@ -44,43 +50,70 @@ public class GestorClientes extends JDialog {
 		tabbedPane.setBounds(0, 0, 434, 228);
 		getContentPane().add(tabbedPane);
 		
+		JPanel panelInsert = new JPanel();
+		tabbedPane.addTab("Insertar Cliente", null, panelInsert, null);
+		panelInsert.setLayout(null);
+		
+		textNomApellido = new JTextField();
+		textNomApellido.setColumns(10);
+		textNomApellido.setBounds(125, 27, 86, 20);
+		panelInsert.add(textNomApellido);
+		
+		JLabel lblNombreYApellido = new JLabel("Nombre y Apellido");
+		lblNombreYApellido.setBounds(25, 30, 95, 14);
+		panelInsert.add(lblNombreYApellido);
+		
+		JLabel lblDni = new JLabel("DNI");
+		lblDni.setBounds(25, 70, 46, 14);
+		panelInsert.add(lblDni);
+		
+		textDni = new JTextField();
+		textDni.setColumns(10);
+		textDni.setBounds(125, 67, 86, 20);
+		panelInsert.add(textDni);
+		
+		JLabel lblCodigo = new JLabel("Codigo");
+		lblCodigo.setBounds(25, 110, 46, 14);
+		panelInsert.add(lblCodigo);
+		
+		textCodigo = new JTextField();
+		textCodigo.setColumns(10);
+		textCodigo.setBounds(125, 107, 86, 20);
+		panelInsert.add(textCodigo);
+		
+		btnGuardar = new JButton("Insertar");
+		btnGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GestorBBDD gestorbbdd = new GestorBBDD();
+				ModeloCliente cliente = new ModeloCliente();
+				cliente.setNombre_apellido(textNomApellido.getText());
+				cliente.setDni(textDni.getText());
+				cliente.setCodigo(textCodigo.getText());
+				if(textNomApellido.getText().length() == 0 || textDni.getText().length() == 0 || textCodigo.getText().length() == 0) {
+				JOptionPane.showMessageDialog(null, "Error!\nAlgun dato introducido no es valido!");	
+				}else {
+				try {
+					gestorbbdd.insertarCliente(cliente);
+					JOptionPane.showMessageDialog(null, "Cliente insertado!");
+					textNomApellido.setText(null);
+					textDni.setText(null);
+					textCodigo.setText(null);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				}
+			}
+		});
+		btnGuardar.setBounds(125, 157, 89, 23);
+		panelInsert.add(btnGuardar);
+		
 		JPanel panel = new JPanel();
-		tabbedPane.addTab("New tab", null, panel, null);
+		tabbedPane.addTab("Modificar Cliente", null, panel, null);
 		contentPanel.setBounds(0, 0, 434, 228);
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel);
 		contentPanel.setLayout(null);
-		
-		textNomApellido = new JTextField();
-		textNomApellido.setBounds(132, 45, 86, 20);
-		contentPanel.add(textNomApellido);
-		textNomApellido.setColumns(10);
-		
-		JLabel lblNombreYApellido = new JLabel("Nombre y Apellido");
-		lblNombreYApellido.setBounds(27, 50, 95, 14);
-		contentPanel.add(lblNombreYApellido);
-		
-		JLabel lblDni = new JLabel("DNI");
-		lblDni.setBounds(27, 85, 46, 14);
-		contentPanel.add(lblDni);
-		
-		textDni = new JTextField();
-		textDni.setBounds(132, 82, 86, 20);
-		contentPanel.add(textDni);
-		textDni.setColumns(10);
-		
-		JLabel lblCodigo = new JLabel("Codigo");
-		lblCodigo.setBounds(27, 120, 46, 14);
-		contentPanel.add(lblCodigo);
-		
-		textCodigo = new JTextField();
-		textCodigo.setBounds(132, 117, 86, 20);
-		contentPanel.add(textCodigo);
-		textCodigo.setColumns(10);
-		
-		btnGuardar = new JButton("Insertar");
-		btnGuardar.setBounds(132, 159, 89, 23);
-		contentPanel.add(btnGuardar);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setBounds(0, 228, 434, 33);
