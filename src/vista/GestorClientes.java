@@ -130,129 +130,33 @@ public class GestorClientes extends JDialog {
 		lblModCodigo.setBounds(25, 110, 60, 14);
 		panelModificar.add(lblModCodigo);
 		
-		textModNombre = new JTextField();
-		textModNombre.setEditable(false);
-		textModNombre.setBounds(130, 27, 86, 20);
-		panelModificar.add(textModNombre);
-		textModNombre.setColumns(10);
+		setTextModNombre(new JTextField());
+		getTextModNombre().setEditable(false);
+		getTextModNombre().setBounds(130, 27, 86, 20);
+		panelModificar.add(getTextModNombre());
+		getTextModNombre().setColumns(10);
 		
-		textModDni = new JTextField();
-		textModDni.setBounds(130, 67, 86, 20);
-		panelModificar.add(textModDni);
-		textModDni.setColumns(10);
+		setTextModDni(new JTextField());
+		getTextModDni().setBounds(130, 67, 86, 20);
+		panelModificar.add(getTextModDni());
+		getTextModDni().setColumns(10);
 		
-		textModCode = new JTextField();
-		textModCode.setEditable(false);
-		textModCode.setBounds(130, 107, 86, 20);
-		panelModificar.add(textModCode);
-		textModCode.setColumns(10);
+		setTextModCode(new JTextField());
+		getTextModCode().setEditable(false);
+		getTextModCode().setBounds(130, 107, 86, 20);
+		panelModificar.add(getTextModCode());
+		getTextModCode().setColumns(10);
 		
 		btnCargar = new JButton("Cargar Cliente");
 		btnEliminar = new JButton("Eliminar Cliente");
 		
 		btnModificar = new JButton("Modificar");
-		btnModificar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				ModeloCliente cliente = new ModeloCliente();
-				GestorBBDD gestorbbdd = new GestorBBDD();
-				
-				cliente.setNombre_apellido(textModNombre.getText());
-				cliente.setDni(textModDni.getText());
-				cliente.setCodigo(textModCode.getText());
-				
-				try {
-					gestorbbdd.modificarCliente(cliente);
-					JOptionPane.showMessageDialog(null, "Usuario Modificado!");
-					textModNombre.setText(null);
-					textModNombre.setEditable(false);
-					textModDni.setText(null);
-					textModDni.setEditable(true);
-					textModCode.setText(null);
-					textModCode.setEditable(false);
-					btnCargar.setText("Cargar Cliente");
-					btnModificar.setEnabled(false);
-					btnEliminar.setVisible(false);
-				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				
-			}
-		});
 		btnModificar.setEnabled(false);
 		btnModificar.setBounds(130, 150, 89, 23);
 		panelModificar.add(btnModificar);
 		
 		btnEliminar.setVisible(false);
-		btnEliminar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				ModeloCliente cliente = new ModeloCliente();
-				GestorBBDD gestorbbdd = new GestorBBDD();
-				cliente.setDni(textModDni.getText());
-				try {
-					gestorbbdd.eliminarCliente(cliente);
-					JOptionPane.showMessageDialog(null, "Usuario Eliminado!");
-					textModNombre.setText(null);
-					textModNombre.setEditable(false);
-					textModDni.setText(null);
-					textModDni.setEditable(true);
-					textModCode.setText(null);
-					textModCode.setEditable(false);
-					btnCargar.setText("Cargar Cliente");
-					btnModificar.setEnabled(false);
-					btnEliminar.setVisible(false);
-				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-			}
-		});
 		
-		btnCargar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				if(textModDni.isEditable()) {
-				
-				ModeloCliente cliente = new ModeloCliente();
-				GestorBBDD gestorbbdd = new GestorBBDD();
-				cliente.setDni(textModDni.getText());
-				
-				if(textModDni.getText().length() == 0) {
-				JOptionPane.showMessageDialog(null, "Error!\nAlgun dato introducido no es valido!");	
-			}else {
-				textModDni.setEditable(false);
-				try {
-					cliente = gestorbbdd.getCliente(cliente);
-				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				if(cliente.getDni() == "-1") {
-					JOptionPane.showMessageDialog(null, "Error!\nNo hemos encontrado ningun usuario con ese DNI!");
-					textModDni.setEditable(true);
-				}else {
-					textModNombre.setText(cliente.getNombre_apellido());
-					textModNombre.setEditable(true);
-					textModCode.setText(cliente.getCodigo());
-					textModCode.setEditable(true);
-					btnModificar.setEnabled(true);
-					btnEliminar.setVisible(true);
-					btnCargar.setText("Equivocado?");
-				}
-			}
-				}else {
-					textModNombre.setText(null);
-					textModNombre.setEditable(false);
-					textModDni.setText(null);
-					textModDni.setEditable(true);
-					textModCode.setText(null);
-					textModCode.setEditable(false);
-					btnCargar.setText("Cargar Cliente");
-					btnModificar.setEnabled(false);
-					btnEliminar.setVisible(false);
-				}
-			}
-		});
 		btnCargar.setBounds(250, 26, 130, 23);
 		panelModificar.add(btnCargar);
 		
@@ -334,5 +238,29 @@ public class GestorClientes extends JDialog {
 
 	public void setBtnGuardar(JButton btnGuardar) {
 		this.btnGuardar = btnGuardar;
+	}
+
+	public JTextField getTextModDni() {
+		return textModDni;
+	}
+
+	public void setTextModDni(JTextField textModDni) {
+		this.textModDni = textModDni;
+	}
+
+	public JTextField getTextModNombre() {
+		return textModNombre;
+	}
+
+	public void setTextModNombre(JTextField textModNombre) {
+		this.textModNombre = textModNombre;
+	}
+
+	public JTextField getTextModCode() {
+		return textModCode;
+	}
+
+	public void setTextModCode(JTextField textModCode) {
+		this.textModCode = textModCode;
 	}
 }
